@@ -4,12 +4,12 @@ import com.project.print.paperestimate.model.PrintTask;
 
 import java.math.BigDecimal;
 
-public class A4CostEstimationServiceImpl implements CostEstimateService{
+public class A4CostEstimationServiceImpl implements CostEstimateService {
 
-    private BigDecimal COLOR_SINGLE_SIDE = new BigDecimal(.25);
-    private BigDecimal COLOR_DOUBLE_SIDE = new BigDecimal(.10);
-    private BigDecimal BW_SINGLE_SIDE = new BigDecimal(.15);
-    private BigDecimal BW_DOUBLE_SIDE = new BigDecimal(.10);
+    private static final BigDecimal COLOR_SINGLE_SIDE = BigDecimal.valueOf(.25);
+    private static final BigDecimal COLOR_DOUBLE_SIDE = BigDecimal.valueOf(.20);
+    private static final BigDecimal BW_SINGLE_SIDE = BigDecimal.valueOf(.15);
+    private static final BigDecimal BW_DOUBLE_SIDE = BigDecimal.valueOf(.10);
 
     public BigDecimal getPrintTaskCost(PrintTask task) {
 

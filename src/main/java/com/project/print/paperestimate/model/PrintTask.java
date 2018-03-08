@@ -7,7 +7,7 @@ public class PrintTask {
     private BigDecimal totalPagesCount;
     private BigDecimal colorPagesCount;
     private Boolean isDoubleSided;
-    private PageType pageType = PageType.A2;
+    private PageType pageType = PageType.A4;
 
     public BigDecimal getTotalPagesCount() {
         return totalPagesCount;
@@ -43,7 +43,7 @@ public class PrintTask {
 
     @Override
     public String toString() {
-        return "Page Type "+ this.pageType + " Color Count " + this.getColorPagesCount() + "Total Pages " +
-                this.getTotalPagesCount() + "Is Double side" + this.getDoubleSided();
+        return "Page Type "+ this.getPageType() + " Color Page Count " + this.getColorPagesCount() + " Total Pages " +
+                this.getTotalPagesCount() + " Is Double side" + this.getDoubleSided();
     }
 }
