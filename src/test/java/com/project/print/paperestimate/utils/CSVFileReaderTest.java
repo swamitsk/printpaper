@@ -11,13 +11,10 @@ import static org.junit.Assert.*;
 
 public class CSVFileReaderTest {
 
-
-
-
     @Test
     public void readFile() throws Exception {
 
-        ArrayList<PrintTask> printTasks = new ArrayList<PrintTask>();
+        ArrayList<PrintTask> printTasks = new ArrayList<>();
         printTasks.add(getPrintTask(BigDecimal.valueOf(25), BigDecimal.valueOf(10), false));
         printTasks.add(getPrintTask(BigDecimal.valueOf(55), BigDecimal.valueOf(13), true));
         printTasks.add(getPrintTask(BigDecimal.valueOf(502), BigDecimal.valueOf(22), true));

@@ -14,9 +14,8 @@ public class PrintCostEstimatorMain {
 
     public static void main(String[] s) throws IOException {
 
-        System.out.println(System.getProperty("user.dir"));
-
-        CostEstimateController controller = new CostEstimateController(new A4CostEstimationServiceImpl(), new CSVFileReader());
+        CostEstimateController controller =
+                new CostEstimateController(new A4CostEstimationServiceImpl(), new CSVFileReader());
         List<PrintTask> tasks = controller.getAllPrintTask(new File("tasks.csv"));
         BigDecimal totalCost = BigDecimal.ZERO;
         for(PrintTask task : tasks) {

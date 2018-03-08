@@ -21,7 +21,7 @@ public class CSVFileReader implements FileReaderService {
     public List<PrintTask> readFile(File file) throws IOException  {
         CSVParser parser = null;
         FileReader reader = null;
-        List<PrintTask> tasks = new ArrayList<PrintTask>();
+        List<PrintTask> tasks = new ArrayList<>();
 
         try {
             CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
@@ -51,6 +51,10 @@ public class CSVFileReader implements FileReaderService {
             printTask.setDoubleSided(Boolean.valueOf(record.get("Double-Sided")));
             printTask.setColorPagesCount(new BigDecimal(record.get("Color-Pages")));
             printTask.setTotalPagesCount(new BigDecimal(record.get("Total-Pages")));
+            if (printTask.getColorPagesCount().compareTo(printTask.getTotalPagesCount()) > 0) {
+                // It should throw a custom exception
+                return null;
+            }
         } catch (NumberFormatException exception) {
             return null;
         }
